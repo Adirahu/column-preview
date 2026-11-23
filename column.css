@@ -1,0 +1,123 @@
+:root {
+    --gold-500: hsl(31, 77%, 52%);
+    --cyan-800: hsl(184, 100%, 22%);
+    --green-950: hsl(179, 100%, 13%);
+    --gray-100: hsl(0, 0%, 95%);
+    --white-transparent: hsla(0, 0%, 100%, 0.75);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: var(--gray-100);
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.preview {
+    display: flex;
+    width: 100%;
+    max-width: 920px;
+    min-height: 500px;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.card {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3rem;
+}
+
+.sedans {
+    background-color: var(--gold-500);
+}
+
+.suvs {
+    background-color: var(--cyan-800);
+}
+
+.luxury {
+    background-color: var(--green-950);
+}
+
+.card img {
+    width: 64px;
+    height: 40px;
+    margin-bottom: 2rem;
+}
+
+.card h2 {
+    margin-bottom: 1.5rem;
+    color: var(--gray-100);
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.card p {
+    margin-bottom: 2rem;
+    color: var(--white-transparent);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+}
+
+.btn {
+    margin-top: auto;
+    padding: 0.9rem 2rem;
+    border: 2px solid var(--gray-100);
+    border-radius: 999px;
+    background-color: var(--gray-100);
+    color: var(--button-color);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.sedans .btn {
+    --button-color: var(--gold-500);
+}
+
+.suvs .btn {
+    --button-color: var(--cyan-800);
+}
+
+.luxury .btn {
+    --button-color: var(--green-950);
+}
+
+.btn:hover,
+.btn:focus-visible {
+    background-color: transparent;
+    color: var(--gray-100);
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 5.5rem 1.5rem;
+    }
+
+    .preview {
+        max-width: 327px;
+        min-height: 0;
+        flex-direction: column;
+    }
+
+    .card {
+        min-height: 442px;
+        padding: 3rem;
+    }
+}
